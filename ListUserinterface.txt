@@ -7,4 +7,5 @@ Saker som bör tänkas på vid skapandet av användargränssnittet. Listan refer
 
 6.1.4 till 6.1.6 Sida för hantering av användare i en projektgrupp, admin skall i interfacet kunna tilldela olika roller
 6.1.4 - "lägga till användare" funktion
-6.1.6 - textbox för namn på användare, textbox för 
+6.1.6 - textbox för namn på användare, textbox för
+6.1.7 - test, pl�s ign�r
