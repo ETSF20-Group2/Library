@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Fri Feb 10 18:37:20 CET 2017
+#Tue Feb 14 10:59:48 CET 2017
 markTmpDer=true
 builderNum=2
 outputDir=
@@ -7,8 +7,8 @@ makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=SRS.tex
-outputFile=SRS.pdf
+mainTexFile=SVVI.tex
+outputFile=SVVI.pdf
 langSpell=en
-markDer=false
+markDer=true
 srcDir=
