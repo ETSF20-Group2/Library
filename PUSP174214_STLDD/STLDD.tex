@@ -118,21 +118,50 @@ Listan refererar till SRS PUSP174212 V.0.2 och Base Block System SRS PUSS12002 V
 \begin{itemize}
 \item[6.1.4] Logout länk, användaren ska informeras att den har loggats ut
 \item[6.1.5] Användaren skall informeras om utloggningen misslyckades
-\item[6.1.6]
-\item[6.1.7]
-\item[6.1.8]
+\item[6.1.6] Sida för inloggning designad enligt 8.1.1
+\item[6.1.7] Sida för funktionalitet ska visas efter inloggning
+\item[6.1.8] Användaren skall alltid ha en knapp tillgänglig för att logga ut
 
 \item[6.2.1] Restriktionerna bör meddelas till användaren
 \item[6.2.3] Restriktionerna bör meddelas till användaren
 
-\item[6.3.3]
-\item[6.3.4]
-\item[6.3.5]
-\item[6.3.6]
-\item[6.3.7]
-\item[6.3.8]
-\item[6.3.10]
-\item[6.3.11]
+Om användare är admin
+\item[6.3.3] På funktionalitets sidan så skall en länk finnas till administrationssidan 
+\item[6.3.4] Om admin klickar på föregående nämnda länk så skall administrationssidan visas
+\item[6.3.5] Admin ska i adminsidan kunna se användarnamn samt lösenord i en lista
+\item[6.3.6] Checkboxes för att kunna välja användare och ta bort den med en “ta bort” knapp
+\item[6.3.7] När admin försöker ta bort en användare ska en varningsruta där admin ska kunna bekräfta eller annullera borttagningen
+\item[6.3.8] Knapp för att lägga till en användare
+\item[6.3.10] Varningsruta som meddelar admin att användaren redan finns
+\item[6.3.11] Varningsruta som meddelar admin att användarinformationen inte uppnår kriterierna
+
+\subsubsection{SRS PUSP174212:}
+\item[8.1.1] Sida för inloggning designad enligt bild i SRS
+\item[8.1.2] Tidrapport designad enligt bild i SRS
+
+Admin:
+\item[9.1.1] Länk till sida för hantering av projektgrupper på funktionalitetssidan, knapp för att lägga till projektgrupp, textbox för inmatning av projektgrupp
+\item[9.1.2] Checkboxes för att kunna välja projektgrupper, “ta bort” knapp, varningsruta med alternativ för att bekräfta eller annullera
+\item[9.1.3] Admin ska kunna välja projektgrupp i en lista, “lägg till” knapp för att lägga till användare i projektgrupp, roll-alternativ för att tilldela användaren i olika roller
+\item[9.1.4] Checkboxes för att kunna välja användare, “ändra” knapp
+\item[9.1.5] se 6.3.8, textboxes för inmatning av användarnamn och e-post
+\item[9.1.8] se 6.3.6
+
+\item[9.2.2] Länk “Main” som leder till funktionalitetssida och länk “Organize group” som leder till sida med gruppens medlemmar, roll-alternativ på medlem med olika roller, “update” knapp
+\item[9.2.4] Projektledaren ska kunna välja mellan rollerna som står i SRS
+\item[9.2.6] Länk till tidrapporterna, sublänk till att signera tidrapporter, checkboxes för alla tidrapporter i gruppen, knappen “Sign”
+\item[9.2.9] Sublänk till att osignera tidrapporter, checkboxes för alla rapporter i gruppen, “ändring” knapp
+\item[9.2.10] Menyn ska visa upp länkarna som står i SRS
+\item[9.2.11] Ska finnas alternativ för att se en sammanställning för alla tidrapporter förslagsvis som en sublänk under “View all reports”
+\item[9.2.12] Ska finnas alternativ för att se olika grupper av tidrapporter enligt SRS. Förslagsvis ska projektledaren kunna välja dessa med olika roll-alternativ som default är på “alla”
+\item[9.2.13] Ska kunna se start för en fas när det väljs i roll-alternativet
+\item[9.2.14] Ska kunna se slut för en fas när det väljs i roll-alternativet
+
+Användare:
+\item[9.3.1] Länk till tidrapportering i menyn
+\item[9.3.2] Sammanställning med all tidigare rapportering, “lägg till” knapp, kommer till ny sida med tom tidrapport, “skicka” knapp
+\item[9.3.3 till 9.3.5] Checkboxes för att välja tidigare tidrapporter, “ta bort” knapp
+\item[9.3.7]Sublänk till alla osignerade tidrapporter, checkboxes för alla rapporter som visas, “ändring” knapp som tar användaren till en sida som visar och kan ändra vald tidrapport, “skicka” knapp, bekräftelseruta med info om att tidrapport har ändrats
 \end{itemize}
 
 
