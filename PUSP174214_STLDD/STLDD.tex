@@ -96,46 +96,73 @@
 % the \# typesets a # character into the document, you will need to replace them
 % in yourdocuments. This is a template, just plug in what you need between the
 % {}s. Document Code Number (same as time reports)
-{\#\#}
+{14}
 % Document Version Number
-{\#.\#}
+{0.1}
 % Document Title
-{\#Dokumentmall\#}
+{STLDD - Högnivådesign}
 % Group Responsible For Document
-{\#(PG) Projekt Grupp\#}
+{(UG) Utvecklingsgrupp}
 % -------------------------------------------------------
 % Title Page END
 % -------------------------------------------------------
 \tableofcontents
 % WRITE THINGS BELOW HERE
 
-\section{Richards Antekningar}
+\section{Introduktion}
+Detta dokument beskriver högnivådesignen för ett tidrapporteringssystem, baserat på ”BaseBlockSystem”.
+% TODO: Komplettera detta med lite mer introduktionell information.
 
-\subsection{Saker som bör tänkas på vid skapandet av användargränssnittet.}
-Listan refererar till SRS PUSP174212 V.0.2 och Base Block System SRS PUSS12002 V. 1.0.
-
-\subsubsection{SRS PUSS12002:}
-\begin{itemize}
-\item[6.1.4] Logout länk, användaren ska informeras att den har loggats ut
-\item[6.1.5] Användaren skall informeras om utloggningen misslyckades
-\item[6.1.6]
-\item[6.1.7]
-\item[6.1.8]
-
-\item[6.2.1] Restriktionerna bör meddelas till användaren
-\item[6.2.3] Restriktionerna bör meddelas till användaren
-
-\item[6.3.3]
-\item[6.3.4]
-\item[6.3.5]
-\item[6.3.6]
-\item[6.3.7]
-\item[6.3.8]
-\item[6.3.10]
-\item[6.3.11]
-\end{itemize}
+\section{Referensdokument}
+BaseBlockSystem STLDDD: \textbf{\textit{PUSS12004 version: 1.0}} gäller för alla punkter om det inte är specificerat i respektive underrubrik att det som står i \textbf{\textit{PUSS12004 version: 1.0}} utgår för specifik del.
 
 
+\section{Översikt}
+Systemet är utvecklad för applikationsservern Apache Tomcat, där Java Servlet, JavaServer Pages (JSP) samt Java Expression Language (JSP EL)-teknologier tillämpas. Systemets huvudfunktion är att fungera som tidrapporteringssystem.
+% TODO: Komplettera detta med lite mer översiktig information.
+
+\subsection{JSP}
+
+\subsubsection{class x:} words 
+
+
+
+%cccccc
+
+%\begin{enumerate}
+%	\item \textbf{class x} xxx
+%\end{enumerate}
+
+\paragraph{fil login.jsp}Sidan är startsida för systemet och innehåller ett inloggningsformulär för att komma åt tidrapporteringsfunktionerna.
+\paragraph{fil groupmanagement.jsp}Grupphantering… % TODO: utöka
+\paragraph{fil usermanagement.jsp}Användarhantering… % TODO: utöka
+\paragraph{fil reportmanagement.jsp}Veckorapporthantering… % TODO: utöka
+\paragraph{fil report.jsp}Veckorapportering… % TODO: utöka
+\paragraph{fil dashboard.jsp}Sammanställning… % TODO: utöka
+\paragraph{fil user.jsp}Användarinställningar… % TODO: utöka
+
+\subsection{Servlet}
+\paragraph{class LogIn} Används vid inloggnin… % TODO: utöka
+\paragraph{class GroupManagement} Används för grupphantering… % TODO: utöka
+\paragraph{class UserManagement} Används för användarhantering… % TODO: utöka
+\paragraph{class ReportManagement} Används för veckorapporthantering… % TODO: utöka
+\paragraph{class Report} Används för veckorapportering… % TODO: utöka
+\paragraph{class Dashboard} Används för sammanställning/översikt… % TODO: utöka
+\paragraph{class User} Används för användarinställningar… % TODO: utöka
+
+\subsection{JavaBeans}
+\paragraph{class GorupManagementBean} % TODO: utöka
+\paragraph{class UserManagementBean} % TODO: utöka
+\paragraph{class ReportManagementBean} % TODO: utöka
+\paragraph{class ReportBean} % TODO: utöka
+\paragraph{class DahsboardBean} % TODO: utöka
+\paragraph{class UserBean} % TODO: utöka
+
+\subsection{Övriga Java-filer} % TODO: utöka
+\paragraph{class Database} % TODO: utöka
+\paragraph{class DatabaseHandler} % TODO: utöka
+
+\newpage
 
 % Saker som bör tänkas på vid skapandet av användargränssnittet. Listan refererar till SRS PUSP174212 V.0.2 och 
 % Base Block System SRS PUSS12002 V. 1.0.
