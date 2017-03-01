@@ -1,5 +1,4 @@
 \documentclass[paper=a4, fontsize=11pt,twoside]{article}
-
 % -------------------------------------------------------------------- 
 % General Page Layout
 % --------------------------------------------------------------------
@@ -7,7 +6,6 @@
 \usepackage[parfill]{parskip}
 \setlength{\oddsidemargin}{5mm}  % Remove 'twosided' indentation
 \setlength{\evensidemargin}{5mm}
-
 % --------------------------------------------------------------------
 % Encoding and Language Settings
 % --------------------------------------------------------------------
@@ -16,7 +14,6 @@
 % encoding may need to be changed depending on the system
 \usepackage[swedish]{babel} 
 \usepackage{lipsum} % Lorem Ipsum
-
 % --------------------------------------------------------------------
 %  Utilities (colors, links, pictures, ect...)
 % --------------------------------------------------------------------
@@ -27,21 +24,21 @@
 \usepackage{epstopdf}
 \usepackage[round]{natbib}
 \usepackage{float}
+\usepackage{placeins}
+\usepackage{listings}
+\lstset{language=SQL} 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
-
 % -----------------------------------------------------------------------------%
 % Title Page / Document Class Definitions (Please Don't Play With This)
-% -----------------------------------------------------------------------------%
-	
+% -----------------------------------------------------------------------------%	
 % Table of contents depth = section & subsection
 \setcounter{tocdepth}{1}
 																								
 % Horizontal rule
-\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}   															
-																											
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}   														
 % Document Number
-\newcommand{\documentNumber}[1]{\centering PUSP1742#1 \\[1.0cm]}	 										
-																											
+\newcommand{\documentNumber}[1]{\centering PUSP1742#1 \\[1.0cm]}
+				
 % Document Version
 \newcommand{\documentVersion}[1]{\centering \small{v.#1} \\[1.0cm]}
 
@@ -49,28 +46,27 @@
 \newcommand{\documentResponsible}[1]{\centering  Ansvarig Grupp: #1}
 
 % Document Creator Group
-\newcommand{\documentCreator}[1]{\centering Uppgjord Av: #1}	 									
-																										
+\newcommand{\documentCreator}[1]{\centering Uppgjord Av: #1}																					
 % Title
 \makeatletter \def\printtitle{ {\centering \@title\par}} \makeatother
-																											
+	
 % Author .. not really used, but it can stay in case
 \makeatletter \def\printauthor{ {\centering \large \@author}} \makeatother
-																											
-\newcommand{\grouptitlepage}[4]{ 
+
+\newcommand{\grouptitlepage}[5]{ 
 	\title{
-		\documentNumber{#1}																						
-		\documentVersion{#2}																				
+		\documentNumber{#1}																		
+		\documentVersion{#2}																			
 		\HRule{0.5pt} \\ % Upper rule 
 		\LARGE \textbf{\uppercase{#3}} \\
 		\large \textbf{\uppercase{ETSF20 Grupp 2}} 
 		\HRule{2pt} \\ [1.5cm]    
 		\normalsize            
 		\documentResponsible{#4} \\ 
-		\documentCreator{#4}  
+		\documentCreator{#5}  
 	}																							
-	\maketitle																							
-	\thispagestyle{empty} 																					
+	\maketitle																					
+	\thispagestyle{empty} 																		
 	\newpage 
 }
 % \grouptitlepage{doc number}{Version Number}{doc title}{group responsible for
@@ -79,10 +75,8 @@
 % Title Page / Document Class Definitions (Please Don't Play With This)
 % --------------------------------------------------------------------------------%
 
-
 % \date{}                                            
 % Activate to display a given date or keep commented for current date
-
 
 % -------------------------------------------------------
 % DOCUMENT START (YOU CAN IGNORE EVERYTHING ABOVE HERE)
@@ -102,7 +96,9 @@
 % Document Title
 {\#Dokumentmall\#}
 % Group Responsible For Document
-{\#(PG) Projekt Grupp\#}
+{\#(SG)Systemgrupp\#}
+%Document responsible
+{\#(UG)Utvecklingsgrupp\#}
 % -------------------------------------------------------
 % Title Page END
 % -------------------------------------------------------
@@ -110,22 +106,16 @@
 % WRITE THINGS BELOW HERE
 
 \section{Introduktion}
-Detta dokument beskriver högnivådesignen för ett tidrapporteringssystem, baserat på “BaseBlockSystem”, som är ett system med inloggnings-funktionalitet på en webbserver.
-Användare i detta tidrapporteringsystem kan rapportera sin arbetade tid för respektive projekt de ingår i. Alla tider som rapporteras sparas i databasen och kan sedan sammanställas av en projektledare. 
-
-Avsikten med systemet är att projektledarna ska kunna få en överblick över arbetad tid i projektet."KOLLA UPP"
+Detta dokument beskriver högnivådesignen för ett tidrapporteringssystem, E-Kyss. Systemet i fråga är en utveckling utav ett redan befintligt system, ''BaseBlockSystem''. Systemet innehåller flera olika funktioner såsom att skapa tidsrapporter, hålla reda på rapporterad tid utav mindre grupper i projektgruppen. Projektledare har även möjlighet att se en sammanställning utav all rapporterad tid. 
 
 \section{Referensdokument}
 \begin{itemize}
 \item SRS PUSP174212 version: 0.2
-
 \item BaseBlockSystem STLDD: PUSS1204 version: 1.0 gäller för alla punkter om det inte är specificerat i respektive underrubrik att det som står i PUSS412004 version: 1.0 utgår för specifik del.
-
 \end{itemize}
-
 \section{Terminologi}
 
-
+\newpage
 \section{Översikt}
 Systemet är utvecklad för applikationsservern Apache Tomcat, där Java Servlet, JavaServer Pages (JSP) samt Java Expression Language (JSP EL)-teknologier tillämpas enligt JavaEE:s 2:a MVC-modellarkitektur. Systemets huvudfunktion är att fungera som ett tidrapporteringssystem.
 
@@ -152,8 +142,6 @@ Vy-design som representerar sammanställning av tidrapporter som renderas ut på
 
 \subsubsection{user.jsp}	
 I denna vy-design ser användaren sin personliga information, och kan ändra sitt lösenord. Kontrollen för denna vy är \textbf{ class UserServlet}.
-
-
 
 \subsection{Kontrollernivå: Servlet}
 Klasserna som specificeras nedan agerar som kontroller i systemet.
@@ -236,97 +224,190 @@ Matar in information från HTTP-förfrågan (“request”) till bönorna.
 Extraherar bönans information och utför databaskommunikation genom \textbf{class DatabaseHandler}.
 
 \section{Databas}
-Databasen består av tre huvudsakliga tabeller Users, ProjectGroups och TimeReports. Den har även en relationstabell memberOf som beskriver relationen mellan Users och ProjectGroups.
+\begin{figure}[H]
+\centering
+\caption{Databasen består av tre huvudsakliga tabeller Users, ProjectGroups och TimeReports. Den har även en relationstabell memberOf som beskriver relationen mellan Users och ProjectGroups.}
 \includegraphics{ERmodel}
-\newline
-\subsection{Users}
+\end{figure}
 
- Users(userName, password, email)
-  Users är en tabell som innehåller användare som är inlagda i systemet. Den består av tre    
-  kolumner: userName, password och email. userName är primary key vilket innebär att det     
-  endast kan finnas en användare med det användarnamnet.\newline
- Tabellen har följande utseende:\newline
-\newline
-\includegraphics{UsersTable}
-\newline
-Tabellen kan konstrueras med följande SQL-satser:
-\newline
-mysql> CREATE TABLE Users (\newline
-    -> userName varChar(10) NOT NULL,\newline
-    -> password varChar(6) NOT NULL,\newline
-    -> email varChar(100) NOT NULL,\newline
+\begin{itemize}
+\item[] \textbf{Users}(\underline{userName}, password, email)
+\item[] \textbf{ProjectGroups}(\underline{groupName})
+\item[] \textbf{TimeReports}(``field 1'', ... , ``field 65'')
+\item[] \textbf{memberOf}(\textit{groupName}, \textit{member}, role)
+\end{itemize}
+
+\newpage
+\subsection{Users}
+\begin{itemize}
+\item[] \textbf{Users}(\underline{userName}, password, email)
+\end{itemize}
+\paragraph{Users} är en tabell som innehåller användare som är inlagda i systemet. Den består av tre kolumner: userName, password och email. userName är primary key vilket innebär att det endast kan finnas en användare med det användarnamnet.
+
+\begin{figure}[H]
+\centering
+\caption{Tabellen har följande utseende:}
+\includegraphics[width=8cm]{UsersTable}
+\end{figure}
+
+\begin{lstlisting}[frame=single, caption={Tabellen kan konstrueras med följande SQL-satser:}]
+mysql> CREATE TABLE Users (
+    -> userName varChar(10) NOT NULL,
+    -> password varChar(6) NOT NULL,
+    -> email varChar(100) NOT NULL,
     -> PRIMARY KEY (userName));
+\end{lstlisting}
 
 \subsection{ProjectGroups}
- ProjectGroups(groupName)\newline
-   ProjectGroups är en tabell som innehåller de olika projektgrupperna i systemet. Den    
-   innehåller endast en kolumn, groupName, som är satt som "primary key" vilket innebär att alla 
-   projektgrupper måste ha unika namn.\newline
+\begin{itemize}
+\item[] \textbf{ProjectGroups}(\underline{groupName})
+\end{itemize}
+\paragraph{ProjectGroups} är en tabell som innehåller de olika projektgrupperna i systemet. Den innehåller endast en kolumn, groupName, som är satt som ``primary key'' vilket innebär att alla projektgrupper måste ha unika namn.
 
-  Tabellen har följande utseende:
-\newline
+\begin{figure}[H]
+\centering
+\caption{Tabellen har följande utseende:}
 \includegraphics{ProjectGroupsTable}
-\newline
-\newline
-Tabellen kan konstrueras med följande SQL-satser:\newline
-mysql> CREATE TABLE ProjectGroups (\newline
-    -> groupName varChar(100),\newline
+\end{figure}
+
+\begin{lstlisting}[frame=single, caption={Tabellen kan konstrueras med följande SQL-satser:}]
+mysql> CREATE TABLE ProjectGroups (
+    -> groupName varChar(100),
     -> PRIMARY KEY (groupName));
+\end{lstlisting}
 
 \subsection{TimeReports}
- TimeReports är en tabell som innehåller all information som rör tidrapporterna. Då tabellen 
-    har många kolumner (65 st) visas den inte här. För att få ut relevant information ur 
-    tidrapporterna så finns det en hjälp-procedure som tar fram relevant information för tillfällen  
-    då detta kan kräva många rader kod. För enklare fall så räcker det med en vanlig SELECT.
-    Det finns även två triggers, en för när man lägger in en ny rad, och en när man uppdaterar 
-    en existerande rad, som väljer rätt roll för användaren, uppdaterar de totala värdena för 
-    aktiviteterna med subaktiviteter (11-19), uppdaterar den totala tiden spenderad för 
-    subaktiviteterna (d, i, f och r) och den totala tiden rapporten avser.
+\paragraph{TimeReports} är en tabell som innehåller all information som rör tidrapporterna. Då tabellen har många kolumner (65 st) visas den inte här. För att få ut relevant information ur tidrapporterna så finns det en hjälp-procedure som tar fram relevant information för tillfällen då detta kan kräva många rader kod. För enklare fall så räcker det med en vanlig SELECT. Det finns även två triggers, en för när man lägger in en ny rad, och en när man uppdaterar en existerande rad, som väljer rätt roll för användaren, uppdaterar de totala värdena för aktiviteterna med subaktiviteter (11-19), uppdaterar den totala tiden spenderad för subaktiviteterna (d, i, f och r) och den totala tiden rapporten avser.
 %%%%Finns inga SQL-satser, eller tabell antagligen för att den var för lång
 
 \subsection{memberOf}
-  memberOf(groupName, member, role)\newline
-   memberOf är en relationstabell som beskriver relationen mellan användare och de olika 	      
-   projektgrupperna. Den har tre kolumner: groupName, member och role. Kolumnerna  
-   groupName och member är tillsammans satta som UNIQE, vilket resulterar i att en medlem 
-   endast kan vara medlem i samma grupp en gång (en roll per projektgrupp). groupName är en "foreign key" som refererar till \textbf{ProjectGroup(groupName)} och member är en "foreign key" som refererar till \textbf{Users(userName)}.\newline
+\begin{itemize}
+\item[] \textbf{memberOf}(\textit{groupName}, \textit{member}, role)
+\end{itemize}
+\paragraph{memberOf} är en relationstabell som beskriver relationen mellan användare och de olika projektgrupperna. Den har tre kolumner: groupName, member och role. Kolumnerna groupName och member är tillsammans satta som UNIQE, vilket resulterar i att en medlem endast kan vara medlem i samma grupp en gång (en roll per projektgrupp). \textit{groupName} är en ``foreign key'' som refererar till \textbf{ProjectGroup(groupName)} och \textit{member} är en ``foreign key'' som refererar till \textbf{Users}(\underline{userName}).\newline
 
-   Tabellen har följande utseende:\newline
+\begin{figure}[H]
+\centering
+\caption{Tabellen har följande utseende:}
 \includegraphics{memberOfTable}
-\newline
-\newline
-Tabellen kan konstrueras med följande SQL-satser:\newline
-mysql> CREATE TABLE memberOf (\newline
-    -> groupName varChar(100),\newline
-    -> member varChar(10),\newline
-    -> role varChar(10),\newline
-    -> UNIQUE (groupName, member),\newline
-    -> FOREIGN KEY (groupName) references ProjectGroups(groupName) ON UPDATE CASCADE\newline
-    -> ON DELETE CASCADE,\newline
-    -> FOREIGN KEY (member) REFERENCES users(userName) ON UPDATE CASCADE ON DELETE CASCADE);\newline
+\end{figure}
 
-\section{Klassdiagram}
-Ett klassdiagram för Java-klasserna hittas i Appendix A.
-
-\section{Information som lagras i sessionen}
-
-Under varje session lagras följande attribut i sessionen utöver det som redan beskrivs i STLDD:n för BaseBlockSystem:
-
-\textbf{Long lastActive:} 	används för att hålla reda på när användaren senast var aktiv i servern.
-\newline
-\newline
-Följande gäller:
-\newline
-\textbf{lastActive => 30:}	Användaren har inte varit aktiv i servern under de senaste 30 minuterna och blir därmed utloggad.
-	
-
-\textbf{String group:} Gruppnamnet för gruppen användaren valt vid inloggning, tex. ‘Grupp 2’
+\begin{lstlisting}[frame=single, caption={Tabellen kan konstrueras med följande SQL-satser:}]
+mysql> CREATE TABLE memberOf (
+    -> groupName varChar(100),
+    -> member varChar(10),
+    -> role varChar(10),
+    -> UNIQUE (groupName, member),
+    -> FOREIGN KEY (groupName) references ProjectGroups(groupName) 
+    -> ON UPDATE CASCADE ON DELETE CASCADE ,
+    -> FOREIGN KEY (member) references users(userName) 
+    -> ON UPDATE CASCADE ON DELETE CASCADE);
+\end{lstlisting}
 
 
 
 \section{Sekvensdiagram}
-%%kommentarer och sekvensdiagram behöver läggas till
-\section{Routing}%%Ska vi ha denna i STLDD:n?
+\subsection{Class LoginServlet}
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{LoginServlet}
+\caption{Sekvensdiagram som hanterar en lyckad inloggningsförfrågan}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=170mm]{LoginServletFailed}
+\caption{Sekvensdiagram som hanterar en icke-lyckad inloggningsförfrågan.}
+\end{figure}
+
+\subsection{Class GroupManagementServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{GroupManagementServlet}
+\caption{Sekvensdiagram som hanterar tilläggande av ny användare samt borttagande av existerande användare.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=160mm]{GroupManagementServlet2}
+\caption{Sekvensdiagram som visar vad klassen BeanTransaction gör vid metoden addGroup().}
+\end{figure}
+
+\subsection{UserManagementServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=160mm]{UserManagementServlet}
+\caption{Sekvensdiagram som beskriver rolltilldelning av en projektmedlem. }
+\end{figure}
+
+\subsection{Class ReportManagementServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{ReportManagementServlet}
+\caption{Sekvensdiagram som beskriver hur en veckorapport signeras av en projektledare. }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{ReportManagementServlet2}
+\caption{Sekvensdiagram som beskriver hur en eller flera veckorapporters signering tas bort av en projektledare.}
+\end{figure}
+
+\subsection{ReportServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{ReportServlet}
+\caption{Sekvensdiagram som beskriver hur en projektmedlems tidrapportering sparas.}
+\end{figure}
+
+\subsection{UserServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{UserServlet}
+\caption{Sekvensdiagram som beskriver en lyckad ändring av en projektmedlems lösenord.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{UserServletFailed}
+\caption{Sekvensdiagram som beskriver en misslyckad ändring av en projektmedlems lösenord. }
+\end{figure}
+
+\subsection{DashBoardServlet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=175mm]{DashBoardServlet}
+\caption{Sekvensdiagram som beskriver användandet av DashBoardServlet}
+\end{figure}
+
+
+\section{Routing}
+Servlets konfigureras till att lyssna på specificerat HTTP URL-mönster, genom användning av @Webservlet-annotering inuti klassfilen. Denna annotering bearbetas av Tomcat vid så kallad deployment
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Servlet-Class           & URL-Pattern                                                     \\ \hline
+LoginServlet            & \begin{tabular}[c]{@{}l@{}}./\\ ./login\\ ./logout\end{tabular} \\ \hline
+GroupManagementServlet  & ./management/groups                                             \\ \hline
+UserManagementServlet   & ./management/users                                              \\ \hline
+ReportmanagementServlet & ./management/reports                                            \\ \hline
+ReportServlet           & ./report                                                        \\ \hline
+DashBoardServlet        & ./dashboard                                                     \\ \hline
+UserServlet             & ./settings/user                                                 \\ \hline
+\end{tabular}
+\caption{Routing}
+\label{my-label}
+\end{table}
+\FloatBarrier
+
 
 \section{Appendix A}
 
@@ -346,13 +427,3 @@ Klassdiagrammet för Java-klasser. Diagrammet är delat på mitten, så slutstre
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
