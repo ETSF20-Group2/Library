@@ -1,4 +1,54 @@
 \select@language {swedish}
-\contentsline {section}{\numberline {1}Richards Antekningar}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Saker som b\IeC {\"o}r t\IeC {\"a}nkas p\IeC {\r a} vid skapandet av anv\IeC {\"a}ndargr\IeC {\"a}nssnittet.}{2}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}SRS PUSS12002:}{2}{subsubsection.1.1.1}
+\contentsline {section}{\numberline {1}Introduktion}{2}{section.1}
+\contentsline {section}{\numberline {2}Referensdokument}{2}{section.2}
+\contentsline {section}{\numberline {3}Terminologi}{3}{section.3}
+\contentsline {section}{\numberline {4}\IeC {\"O}versikt}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Vyniv\IeC {\r a}: JSP (JavaServer Pages)}{4}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}login.jsp}{4}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}groupmanagement.jsp}{4}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}usermanagement.jsp}{4}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}reportmanagement.jsp}{4}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}report.jsp}{4}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}dashboard.jsp}{5}{subsubsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.7}user.jsp}{5}{subsubsection.4.1.7}
+\contentsline {subsection}{\numberline {4.2}Kontrollerniv\IeC {\r a}: Servlet}{5}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}LoginServlet}{5}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}GroupManagementServlet}{5}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}UserManagementServlet}{5}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}ReportManagementServlet}{6}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5} ReportServlet}{6}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}DashboardServlet}{6}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}UserServlet}{6}{subsubsection.4.2.7}
+\contentsline {subsection}{\numberline {4.3}Modellniv\IeC {\r a}: JavaBeans}{6}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}LoginBean}{6}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}GroupManagementBean}{6}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}UserManagementBean}{6}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}ReportManagementBean}{7}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}ReportBean}{7}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}DashboardBean}{7}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}UserBean}{7}{subsubsection.4.3.7}
+\contentsline {subsection}{\numberline {4.4}\IeC {\"O}vriga klasser p\IeC {\r a} modellniv\IeC {\r a}}{7}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Database}{7}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}DatabaseHandler}{7}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}BeanFactory}{7}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}BeanUtilities}{7}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}BeanTransaction}{7}{subsubsection.4.4.5}
+\contentsline {section}{\numberline {5}Databas}{8}{section.5}
+\contentsline {subsection}{\numberline {5.1}Users}{9}{subsection.5.1}
+\contentsline {paragraph}{Users}{9}{section*.2}
+\contentsline {subsection}{\numberline {5.2}ProjectGroups}{9}{subsection.5.2}
+\contentsline {paragraph}{ProjectGroups}{9}{section*.3}
+\contentsline {subsection}{\numberline {5.3}TimeReports}{10}{subsection.5.3}
+\contentsline {paragraph}{TimeReports}{10}{section*.4}
+\contentsline {subsection}{\numberline {5.4}memberOf}{10}{subsection.5.4}
+\contentsline {paragraph}{memberOf}{10}{section*.5}
+\contentsline {section}{\numberline {6}Sekvensdiagram}{11}{section.6}
+\contentsline {subsection}{\numberline {6.1}Class LoginServlet}{11}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Class GroupManagementServlet}{12}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}UserManagementServlet}{13}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Class ReportManagementServlet}{13}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}ReportServlet}{14}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}UserServlet}{15}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}DashBoardServlet}{16}{subsection.6.7}
+\contentsline {section}{\numberline {7}Routing}{16}{section.7}
+\contentsline {section}{\numberline {8}Appendix A}{17}{section.8}
