@@ -92,9 +92,9 @@
 % {}s. Document Code Number (same as time reports)
 {14}
 % Document Version Number
-{0.1}
+{1.0}
 % Document Title
-{STLDD}
+{STLDD - Högnivådesign}
 % Group Responsible For Document
 {(SG)Systemgrupp}
 %Document responsible
@@ -324,18 +324,18 @@ mysql> CREATE TABLE memberOf (
 \end{lstlisting}
 
 
-
+\newpage
 \section{Sekvensdiagram}
 \subsection{Class LoginServlet}
 \begin{figure}[H]
 \centering
-\includegraphics[width=175mm]{LoginServlet}
+\includegraphics[width=140mm]{LoginServlet}
 \caption{Sekvensdiagram som hanterar en lyckad inloggningsförfrågan}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=170mm]{LoginServletFailed}
+\includegraphics[width=130mm]{Login_False}
 \caption{Sekvensdiagram som hanterar en icke-lyckad inloggningsförfrågan.}
 \end{figure}
 
@@ -427,22 +427,32 @@ UserServlet             & ./settings/user                                       
 \end{table}
 \FloatBarrier
 
-
+\newpage
 \section{Appendix A}
 
-Klassdiagrammet för Java-klasser. Diagrammet är delat på mitten, så slutstrecket i fig. A.1 fortsätter i fig. A.2.
-\begin{figure}[H]
+%Klassdiagrammet för Java-klasser. Diagrammet är delat på mitten, så slutstrecket i fig. A.1 fortsätter i fig. A.2.
+\begin{center} 
+\begin{figure}[h!]
 \centering
-\includegraphics[width=13cm]{Klassdiagram1}
-\caption{Första halvan i klassdiagrammet.}
+\centerline{Klassdiagrammet för Java-klasser.}
+\centerline{Diagrammet är delat på mitten och fortsätter i figur~\ref{fig:class2} på sida~\pageref{fig:class2}.}
+\includegraphics[width=15cm]{Klassdiagram1}
+\caption{Första halvan i klassdiagrammet.\label{fig:class1}}
 \end{figure}
-%Figur A.1. Första halvan i klassdiagrammet.
+\end{center} 
+
+
+\begin{center} 
 \begin{figure}[H]
 \centering
+\centerline{Klassdiagrammet för Java-klasser.}
+%Diagrammet är delat på mitten och fortsätter från i fig. A.1
+\centerline{Diagrammet är delat på mitten och fortsätter från figur~\ref{fig:class1} på sida~\pageref{fig:class1}.}
 \includegraphics[width=14cm]{Klassdiagram2}%%lyckas inte få till denna bild
-\caption{Andra halvan i klassdiagrammet.}
+\caption{Andra halvan i klassdiagrammet.\label{fig:class2}}
 \end{figure}
-%Figur A.2. Andra halvan i klassdiagrammet.
+\end{center} 
+
 
 
 \end{document}

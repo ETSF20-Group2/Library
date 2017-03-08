@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.11.29)  14 FEB 2017 07:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.11.29)  8 MAR 2017 15:28
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -812,60 +812,41 @@ Package babel Info: Redefining swedish shorthand "|
 (babel)             in language  on input line 409.
 Package babel Info: Redefining swedish shorthand "~
 (babel)             in language  on input line 409.
-
-Underfull \hbox (badness 1077) in paragraph at lines 419--420
-[][]\T1/cmr/m/n/10 Konflikter bör hän-da i nå-gon
- []
-
-
-Overfull \hbox (16.90448pt too wide) in paragraph at lines 415--441
- [][][] 
- []
-
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 443.
+(babel)             in language  on input line 419.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 443.
+(babel)             in language  on input line 419.
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 443.
+(babel)             in language  on input line 419.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 443.
-[9]
+(babel)             in language  on input line 419.
+ [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 467.
+(babel)             in language  on input line 456.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 467.
+(babel)             in language  on input line 456.
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 467.
+(babel)             in language  on input line 456.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 467.
+(babel)             in language  on input line 456.
  [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 482.
-Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 482.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 482.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
  (./SDP.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 482.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 482.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 456.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
 Package rerunfilecheck Info: File `SDP.out' has not changed.
 (rerunfilecheck)             Checksum: 9ABA175359754482313A7322EF8E62B9;569.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 482.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
  7347 strings out of 493015
  101551 string characters out of 6133376
- 307155 words of memory out of 5000000
+ 306155 words of memory out of 5000000
  10787 multiletter control sequences out of 15000+600000
  17682 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,11n,35p,539b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,35p,539b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SDP.dvi (11 pages, 51080 bytes).
+Output written on SDP.dvi (10 pages, 47828 bytes).
