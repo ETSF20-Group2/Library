@@ -2,3 +2,13 @@
 <action>Baseline</action>
 <summary>Dokumentet gick i baseline.</summary>
 <responsible>Gregory Austin</responsible>
+
+<date>170317</date>
+<action>Rätt version i baseline.</action>
+<summary>Det upptäcktes att dokumentet som gick i baseline var en gammal version av SVVS:n. Den nyaste version är nu i baseline.</summary>
+<responsible>Gregory Austin</responsible>
+
+<date>170318</date>
+<action>Testfall raderas.</action>
+<summary>Krav 8.0.2, 8.0.3, 8.0.4, 8.0.5 i SRS:n raderades efter diskussion med UG och kunden. FT18, FT20, FT21, FT22, FT23 raderas i samband med dessa krav.</summary>
+<responsible>Gregory Austin</responsible>
