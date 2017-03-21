@@ -1,0 +1,14 @@
+<date>170308</date>
+<action>Baseline</action>
+<summary>Dokumentet gick i baseline.</summary>
+<responsible>Gregory Austin</responsible>
+
+<date>170317</date>
+<action>Rätt version i baseline.</action>
+<summary>Det upptäcktes att dokumentet som gick i baseline var en gammal version av SVVS:n. Den nyaste version är nu i baseline.</summary>
+<responsible>Gregory Austin</responsible>
+
+<date>170318</date>
+<action>Krav raderas.</action>
+<summary>Krav 8.0.2, 8.0.3, 8.0.4, 8.0.5 i SRS:n raderades efter diskussion med UG och kunden.</summary>
+<responsible>Gregory Austin</responsible>

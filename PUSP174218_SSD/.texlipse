@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Mar 21 14:09:35 CET 2017
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=SSD.tex
+outputFile=SSD.pdf
+langSpell=en
+markDer=true
+srcDir=
