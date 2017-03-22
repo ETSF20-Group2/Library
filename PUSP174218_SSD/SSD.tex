@@ -123,7 +123,7 @@ Projektet som levereras innehåller följande delar och dokument:
 	\hline
 	SRS & PUSP174212 & 1.2 & \\
 	\hline
-	SVVS & PUSP174213 & 1.0 & \\
+	SVVS & PUSP174213 & 1.1 & \\
 	\hline
 	STLDD & PUSP174214 & 1.0 & \\
 	\hline
@@ -141,16 +141,17 @@ Projektet som levereras innehåller följande delar och dokument:
 \subsection{Systemets syfte}
 Det huvudsakliga målet med systemet är att erbjuda ett funktionellt tidrapporteringssystem som bygger vidare på ett redan givet “BaseBlockSystem”. Detta ska kunna användas av projektgrupper för att enkelt kunna rapportera in arbetstid.
 \subsection{Skillnader mellan kravspecification och levererat system}
-Krav 8.0.3-6.0.6 valdes att inte implementeras.
+Krav 8.0.1, samt 8.0.3-8.0.6 valdes att inte implementeras. %fix the typo
 \flushleft
-Krav 8.2.13 samt 8.2.14 (projektledare skall kunna se slut och start för faser) kunde inte implementeras. I SRS:n står det även att en projektledare skapas i tre steg, vilket inte gäller för det levererade systemet. I SRS:n stod det att en användare skapas, läggs till i en projektgrupp, och sätts sedan till projektledare. I det levererade systemet kan man sätta en användare till projektledare samtidigt som man sätter in dem i en projektgrupp. Dessutom behövde så använder inte det levererade systemet HTML (vilket var specificerat i SDP:n) utan använder istället JSP, vilket genererar HTML. 
+Krav 8.2.12e, 8.2.13 samt 8.2.14 (projektledare skall kunna se slut och start
+för faser) kunde inte implementeras. I SRS:n står det även att en projektledare skapas i tre steg, vilket inte gäller för det levererade systemet. I SRS:n stod det att en användare skapas, läggs till i en projektgrupp, och sätts sedan till projektledare. I det levererade systemet kan man sätta en användare till projektledare samtidigt som man sätter in dem i en projektgrupp. Dessutom behövde så använder inte det levererade systemet HTML (vilket var specificerat i SDP:n) utan använder istället JSP, vilket genererar HTML.
+
+\newpage
 \section{Anvisningar för installation}
 \begin{enumerate}
-\item
-Systemet måste startas på en Tomcat Server.
-\item
-Systemet måste vara uppkopplat till en MySQL server, vilket redan är hårdkodat i systemet.
-\item
-database.sql måste köras för att sätta upp MySQL-databasen.
+\item Systemet måste startas på en Tomcat Server.
+\item Systemet måste vara uppkopplat till en MySQL server, vilket redan är
+hårdkodat i systemet.
+\item \textit{database.sql} måste köras för att sätta upp MySQL-databasen.
 \end{enumerate}
 \end{document}
