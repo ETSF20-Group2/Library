@@ -1,0 +1,169 @@
+\documentclass[paper=a4, fontsize=11pt,twoside]{article}
+
+% -------------------------------------------------------------------- 
+% General Page Layout
+% --------------------------------------------------------------------
+\usepackage[a4paper]{geometry} 
+\usepackage[parfill]{parskip}
+\setlength{\oddsidemargin}{5mm}  % Remove 'twosided' indentation
+\setlength{\evensidemargin}{5mm}
+
+% --------------------------------------------------------------------
+% Encoding and Language Settings
+% --------------------------------------------------------------------
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}   
+% encoding may need to be changed depending on the system
+\usepackage[swedish]{babel} 
+\usepackage{lipsum} % Lorem Ipsum
+
+% --------------------------------------------------------------------
+%  Utilities (colors, links, pictures, ect...)
+% --------------------------------------------------------------------
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[round]{natbib}
+\usepackage{float}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% -----------------------------------------------------------------------------%
+% Title Page / Document Class Definitions (Please Don't Play With This)
+% -----------------------------------------------------------------------------%
+	
+% Table of contents depth = section & subsection
+\setcounter{tocdepth}{1}
+																								
+% Horizontal rule
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}   															
+																											
+% Document Number
+\newcommand{\documentNumber}[1]{\centering PUSP1742#1 \\[1.0cm]}	 										
+																											
+% Document Version
+\newcommand{\documentVersion}[1]{\centering \small{v.#1} \\[1.0cm]}
+
+% Group Responsible
+\newcommand{\documentResponsible}[1]{\centering  Ansvarig Grupp: #1}
+
+% Document Creator Group
+\newcommand{\documentCreator}[1]{\centering Uppgjord Av: #1}	 									
+																										
+% Title
+\makeatletter \def\printtitle{ {\centering \@title\par}} \makeatother
+																											
+% Author .. not really used, but it can stay in case
+\makeatletter \def\printauthor{ {\centering \large \@author}} \makeatother
+																											
+\newcommand{\grouptitlepage}[4]{ 
+	\title{
+		\documentNumber{#1}																						
+		\documentVersion{#2}																				
+		\HRule{0.5pt} \\ % Upper rule 
+		\LARGE \textbf{\uppercase{#3}} \\
+		\large \textbf{\uppercase{ETSF20 Grupp 2}} 
+		\HRule{2pt} \\ [1.5cm]    
+		\normalsize            
+		\documentResponsible{#4} \\ 
+		\documentCreator{#4}  
+	}																							
+	\maketitle																							
+	\thispagestyle{empty} 																					
+	\newpage 
+}
+% \grouptitlepage{doc number}{Version Number}{doc title}{group responsible for
+% doc}
+% --------------------------------------------------------------------------------%
+% Title Page / Document Class Definitions (Please Don't Play With This)
+% --------------------------------------------------------------------------------%
+
+
+% \date{}                                            
+% Activate to display a given date or keep commented for current date
+
+
+% -------------------------------------------------------
+% DOCUMENT START (YOU CAN IGNORE EVERYTHING ABOVE HERE)
+% -------------------------------------------------------
+\begin{document}
+
+% -------------------------------------------------------
+% Title Page START
+% -------------------------------------------------------
+\grouptitlepage
+% the \# typesets a # character into the document, you will need to replace them
+% in yourdocuments. This is a template, just plug in what you need between the
+% {}s. Document Code Number (same as time reports)
+{19}
+% Document Version Number
+{0.0}
+% Document Title
+{Projektslutrapport}
+% Group Responsible For Document
+{(PG) Projekt Grupp}
+% -------------------------------------------------------
+% Title Page END
+% -------------------------------------------------------
+\tableofcontents
+% WRITE THINGS BELOW HERE
+
+\section{Tidtabeller}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Dokument} & \textbf{Total} & \textbf{Utv} & \textbf{I-Gran} &
+\textbf{F-Gran} & \textbf{Ändring}\\
+\hline
+SDP & 4325 & 3125 & 120 & 335 & 745\\
+\hline
+SRS & 8302 & 6695 & 507 & 360 & 740\\
+\hline
+SVVS & 3270 & 2200 & 310 & 430 & 330\\
+\hline
+STLDD & 13440 & 12325 & 420 & 335 & 360\\
+\hline
+SVVI & 2295 & 1795 & 300 & 80 & 120\\
+\hline
+SDDD & 6645 & 6645 & 0 & 0 & 0\\
+\hline
+SVVR & - & 0 & 0 & 0 & 0\\
+\hline
+SSD & 2780 & 2780 & 0 & 0 & 0\\
+\hline
+PFR & - & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+{\fontsize{8pt}{0.2cm}\selectfont stil\_id} & {\fontsize{8pt}{0.2cm}\selectfont
+total} & {\fontsize{8pt}{0.2cm}\selectfont v.3} &
+{\fontsize{8pt}{0.2cm}\selectfont v.4} & {\fontsize{8pt}{0.2cm}\selectfont v.5}
+& {\fontsize{8pt}{0.2cm}\selectfont v.6} & {\fontsize{8pt}{0.2cm}\selectfont v.7}
+& {\fontsize{8pt}{0.2cm}\selectfont v.8} & {\fontsize{8pt}{0.2cm}\selectfont v.9}
+& {\fontsize{8pt}{0.2cm}\selectfont v.10} & {\fontsize{8pt}{0.2cm}\selectfont
+v.11} & {\fontsize{8pt}{0.2cm}\selectfont v.12} \\
+\hline
+dat13mde & 5305 & 720 & 1470 & 840 & 640 & 720 & 405 & 390 & 120 & - & - \\
+\hline
+dat14sfa & 8770 & 680 & 750 & 1265 & 760 & 510 & 575 & 1500 & 255 & 2475 & - \\
+\hline
+dat15bho & 4100 & 315 & 1210 & 885 & 345 & 360 & 420 & 330 & 90 & 145 & - \\
+\hline
+sas10gau & 9040 & 1635 & 1935 & 1790 & 660 & 840 & 470 & 640 & 245 & 825 & -\\
+\hline
+\end{tabular}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
