@@ -98,7 +98,7 @@
 % {}s. Document Code Number (same as time reports)
 {18}
 % Document Version Number
-{0.0}
+{0.1}
 % Document Title
 {SSD - Systemspecifikation}
 % Group Responsible For Document
@@ -108,16 +108,39 @@
 % -------------------------------------------------------
 \tableofcontents
 % WRITE THINGS BELOW HERE
+\newpage
+\section{Introduktion}
+Detta dokument beskriver det levererade systemet och versionsnummer på dokumenten som omfattas utav det. Det beskriver även systemets begränsningar och eventuella skillnader mellan kravspecifikationen och det levererade systemet.
 
-
+\section{Levererat System}
+Projektet som levereras innehåller följande delar och dokument:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline	
+	Dokument/Del & Dokumentnummer & Version & Kommentar \\
+	\hline	
+	SDP & PUSP174211 & 1.0 & \\
+	\hline
+	SRS & PUSP174212 & 1.1 & \\
+	\hline
+	SVVS & PUSP174213 & 1.0 & \\
+	\hline
+	STLDD & PUSP174214 & 1.0 & \\
+	\hline
+	SVVI & PUSP174214 & 1.0 & \\
+	\hline
+	SDDD & PUSP174215 & N/A & war-fil, initierings-skript och java-doc\\
+	\hline
+	SVVR & PUSP174216 &  & \\
+	\hline
+	SSD & PUSP174217 & & \\
+	\hline
+\end{tabular}
+\end{center}
+\section{Begränsningar}
+\subsection{Systemets syfte}
+Det huvudsakliga målet med systemet är att erbjuda ett funktionellt tidrapporteringssystem som bygger vidare på ett redan givet “BaseBlockSystem”. Detta ska kunna användas av projektgrupper för att enkelt kunna rapportera in arbetstid.
+\subsection{Skillnader mellan kravspecification och levererat system}
+Krav 8.2.13 samt 8.2.14 (projektledare skall kunna se slut och start för faser) kunde inte implementeras. I SRS:n står det även att en projektledare skapas i tre steg, vilket inte gäller för det levererade systemet. I SRS:n stod det att en användare skapas, läggs till i en projektgrupp, och sätts sedan till projektledare. I det levererade systemet kan man sätta en användare till projektledare samtidigt som man sätter in dem i en projektgrupp. Dessutom behövde så använder inte det levererade systemet HTML (vilket var specificerat i SDP:n) utan använder istället JSP, vilket genererar HTML. 
+\section{Anvisningar för installation}
 \end{document}
-
-
-
-
-
-
-
-
-
-
